@@ -6,6 +6,7 @@ import DropList from '../../Componentes/DropList';
 import CreditCard from '../../SubPages/CreditCard';
 import CardGraphics from '../../SubPages/CardGraphics';
 import CardPlans from '../../SubPages/CardPlans';
+import CardEducation from '../../SubPages/CardEducation';
 
 export default function Home(){
 
@@ -48,6 +49,7 @@ export default function Home(){
             <CreditCard/>
             <CardGraphics/>
             <CardPlans/>
+            <CardEducation/>
         </ScrollView>
     )
 }
