@@ -5,6 +5,7 @@ import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 import DropList from '../../Componentes/DropList';
 import CreditCard from '../../SubPages/CreditCard';
 import CardGraphics from '../../SubPages/CardGraphics';
+import CardPlans from '../../SubPages/CardPlans';
 
 export default function Home(){
 
@@ -46,6 +47,7 @@ export default function Home(){
             </View>
             <CreditCard/>
             <CardGraphics/>
+            <CardPlans/>
         </ScrollView>
     )
 }
