@@ -5,6 +5,11 @@ import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
 const cardImage = "https://cdn.iconscout.com/icon/free/png-512/mastercard-25-675722.png"
 
+//Anotações
+// Colocar o estilo como se fosse um cartão de crédito real.
+// Adicionar POP-UP para adicionar um novo cartão.
+// Adicionar a opção de visualizar a fatura fechada.
+
 export default function CreditCard(){
     return(
         <View style={styles.container}>

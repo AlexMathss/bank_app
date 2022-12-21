@@ -3,6 +3,11 @@ import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Entypo, FontAwesome, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 
+// Anotações
+// Criar um DROPLIST para selecionar os meses.
+// Criar uma página para navegar até o perfil.
+// Criar uma DROPLIST para notificações e Mais.
+
 export default function Header(){
     return(
         <View style={styles.dataIcons}>

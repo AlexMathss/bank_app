@@ -19,6 +19,10 @@ import Header from './src/Componentes/Header';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+// Anotações
+// Adicionar efeito ao realizar a troca de página.
+// Adicionar efeito no botão de + para puxar as opções.
+
 function MyTabs() {
   return (
     <Tab.Navigator

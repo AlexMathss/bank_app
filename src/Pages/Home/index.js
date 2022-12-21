@@ -9,6 +9,10 @@ import CardPlans from '../../SubPages/CardPlans';
 import CardEducation from '../../SubPages/CardEducation';
 import CardBalance from '../../SubPages/CardBalance';
 
+//Anotações.
+// Mudar o visual de dados escondidos - Deixar mais suave.
+// Tentar mudar a cor de fundo para algo mais vivido porem suave.
+
 export default function Home(){
 
     const [showValues, setShowValues] = useState(false);
