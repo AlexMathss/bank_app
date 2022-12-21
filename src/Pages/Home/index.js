@@ -7,6 +7,7 @@ import CreditCard from '../../SubPages/CreditCard';
 import CardGraphics from '../../SubPages/CardGraphics';
 import CardPlans from '../../SubPages/CardPlans';
 import CardEducation from '../../SubPages/CardEducation';
+import CardBalance from '../../SubPages/CardBalance';
 
 export default function Home(){
 
@@ -50,6 +51,7 @@ export default function Home(){
             <CardGraphics/>
             <CardPlans/>
             <CardEducation/>
+            <CardBalance/>
         </ScrollView>
     )
 }
