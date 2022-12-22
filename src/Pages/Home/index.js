@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
-import DropList from '../../Componentes/DropList';
-import CreditCard from '../../SubPages/CreditCard';
-import CardGraphics from '../../SubPages/CardGraphics';
-import CardPlans from '../../SubPages/CardPlans';
-import CardEducation from '../../SubPages/CardEducation';
-import CardBalance from '../../SubPages/CardBalance';
+import CreditCard from '../../SubPages/Home/CreditCard';
+import CardGraphics from '../../SubPages/Home/CardGraphics';
+import CardPlans from '../../SubPages/Home/CardPlans';
+import CardEducation from '../../SubPages/Home/CardEducation';
+import CardBalance from '../../SubPages/Home/CardBalance';
+import CardPontos from '../../SubPages/Home/CardPontos';
 
 //Anotações.
 // Mudar o visual de dados escondidos - Deixar mais suave.
@@ -56,6 +56,7 @@ export default function Home(){
             <CardPlans/>
             <CardEducation/>
             <CardBalance/>
+            <CardPontos/>
         </ScrollView>
     )
 }
