@@ -1,35 +1,38 @@
 import { AntDesign } from '@expo/vector-icons';
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import ListaGasto from '../../SubPages/Transacoes/ListaGasto';
 
 //Anotações
 //Mudar a cor do meu transações ou altrar a cor dos icones e botão
 
 export default function Transacoes(){
     return(
-
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <View style={styles.options}>
-                    <TouchableOpacity style={styles.buttonMenu}>
-                        <Text style={styles.title}>Transações</Text>
-                        <AntDesign name="down" size={15} color="black"/>
-                    </TouchableOpacity>
+        <ScrollView>
+            <View style={styles.container}>
+                <View style={styles.header}>
+                    <View style={styles.options}>
+                        <TouchableOpacity style={styles.buttonMenu}>
+                            <Text style={styles.title}>Transações</Text>
+                            <AntDesign name="down" size={15} color="black"/>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <AntDesign name="ellipsis1" size={30} color="black"/>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View style={styles.month}>
                     <TouchableOpacity>
-                        <AntDesign name="ellipsis1" size={30} color="black"/>
+                        <AntDesign name="left" size={20} color="white"/>
+                    </TouchableOpacity>
+                    <Text style={styles.monthTitle}>Outubro</Text>
+                    <TouchableOpacity>
+                        <AntDesign name="right" size={20} color="white"/>
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={styles.month}>
-                <TouchableOpacity>
-                    <AntDesign name="left" size={20} color="white"/>
-                </TouchableOpacity>
-                <Text style={styles.monthTitle}>Outubro</Text>
-                <TouchableOpacity>
-                    <AntDesign name="right" size={20} color="white"/>
-                </TouchableOpacity>
-            </View>
-        </View>
+            <ListaGasto/>
+        </ScrollView>
     )
 }
 
