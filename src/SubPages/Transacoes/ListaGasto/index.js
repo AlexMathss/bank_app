@@ -1,6 +1,7 @@
-import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
+import { AntDesign, Entypo, FontAwesome, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import {View, Text, StyleSheet, ScrollView, TextInput} from 'react-native';
+import ListItems from "../../../Componentes/ListItems";
 
 export default function ListaGasto(){
     return(
@@ -35,10 +36,49 @@ export default function ListaGasto(){
                             />
                         </View>
                     </View>
-                    <View style={{width: '100%', padding: 15, backgroundColor: '#FFF'}}>
-                        <View style={{backgroundColor: 'orange', height: 60}}>
-                            <Text>Alex</Text>
-                        </View>
+                    <View style={{width: '100%', padding: 15, backgroundColor: '#FFF',}}>
+                        <ListItems
+                            iconeLegend={<Ionicons name="car-outline" size={30} color="#1C8BEB"/>}
+                            title={'Parcela Carro'}
+                            legend={'Transporte'}
+                            valor={'400,00'}
+                        />
+                        <ListItems
+                            iconeLegend={<Ionicons name="ios-medkit-outline" size={30} color="#1C8BEB"/>}
+                            title={'Plano de Saúde'}
+                            legend={'Saúde'}
+                            valor={'120,00'}
+                        />
+                        <ListItems
+                            iconeLegend={<Ionicons name="ios-home-outline" size={30} color="#1C8BEB"/>}
+                            title={'Internet'}
+                            legend={'Casa'}
+                            valor={'132,17'}
+                        />
+                        <ListItems
+                            iconeLegend={<MaterialCommunityIcons name="umbrella-beach-outline" size={30} color="#1C8BEB"/>}
+                            title={'HBO Max'}
+                            legend={'Lazer'}
+                            valor={'19,99'}
+                        />
+                        <ListItems
+                            iconeLegend={<MaterialCommunityIcons name="umbrella-beach-outline" size={30} color="#1C8BEB"/>}
+                            title={'Netflix'}
+                            legend={'Lazer'}
+                            valor={'55,99'}
+                        />
+                        <ListItems
+                            iconeLegend={<Ionicons name="ios-home-outline" size={30} color="#1C8BEB"/>}
+                            title={'Amazon Prime'}
+                            legend={'Casa'}
+                            valor={'14,90'}
+                        />
+                        <ListItems
+                            iconeLegend={<FontAwesome name="tv" size={30} color="#1C8BEB"/>}
+                            title={'Monitor'}
+                            legend={'Eletrônico'}
+                            valor={'100,00'}
+                        />
                     </View>
                 </ScrollView>
             </View>
@@ -49,18 +89,17 @@ export default function ListaGasto(){
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'orange',
+        backgroundColor: '#1C8BEB',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
         paddingLeft: 20,
         paddingRight: 20,
         padding: 15,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20
     },
     lista: {
         height: 600,
         width: '100%',
+        marginBottom: 50
     },
     value: {
         width: '100%',
@@ -99,8 +138,8 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     containerList: {
-        flex: 1, 
-        backgroundColor: 'red'
+        height: 600, 
+        backgroundColor: '#FFF',
     },
     search: {
         height: 70,

@@ -5,6 +5,7 @@ import ListaGasto from '../../SubPages/Transacoes/ListaGasto';
 
 //Anotações
 //Mudar a cor do meu transações ou altrar a cor dos icones e botão
+//Mudar cor de fundo para ficar algo mais suave
 
 export default function Transacoes(){
     return(
@@ -44,9 +45,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingLeft: 20,
         paddingRight: 20,
-        padding: 15,
-        borderBottomRightRadius: 30,
-        borderBottomLeftRadius: 30,
+        padding: 15
     },
     header: {
         width: '65%',
