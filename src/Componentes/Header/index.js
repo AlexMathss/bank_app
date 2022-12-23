@@ -25,6 +25,7 @@ export default function Header(){
                     <TouchableOpacity style={styles.notification}>
                         <FontAwesome5 name="bell" size={22} color="#828486" style={styles.notificationIcon}/>
                     </TouchableOpacity>
+                    
                     <TouchableOpacity style={styles.notification}>
                         <Entypo name="dots-three-vertical" size={22} color="#828486"/>
                     </TouchableOpacity>

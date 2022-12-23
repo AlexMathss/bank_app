@@ -1,4 +1,4 @@
-import { AntDesign, Entypo, FontAwesome, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign, Entypo, FontAwesome, Ionicons, MaterialCommunityIcons, SimpleLineIcons } from "@expo/vector-icons";
 import React from "react";
 import {View, Text, StyleSheet, ScrollView, TextInput} from 'react-native';
 import ListItems from "../../../Componentes/ListItems";
@@ -9,7 +9,7 @@ export default function ListaGasto(){
             <View style={styles.container}>
                     <View style={styles.value}>
                         <View style={styles.saldoCard}>
-                            <AntDesign name="lock" size={35} color="black"/>
+                            <AntDesign name="lock" size={35} color="#FFF"/>
                             <View style={styles.valueText}>
                                 <Text style={styles.saldo}>Saldo Atual</Text>
                                 <Text style={[styles.saldoValue, {color: 'green'}]}>R$ 1.577,43</Text>
@@ -17,7 +17,7 @@ export default function ListaGasto(){
                         </View>
                         <View style={styles.separator}/>
                         <View style={styles.saldoCard}>
-                            <Entypo name="wallet" size={35} color="black"/>
+                        <SimpleLineIcons name="wallet" size={35} color="#FFF"/>
                             <View style={styles.valueText}>
                                 <Text style={styles.saldo}>Balanço Mensal</Text>
                                 <Text style={[styles.saldoValue, {color: 'red'}]}>- R$ 742,96</Text>

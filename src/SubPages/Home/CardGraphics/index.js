@@ -4,6 +4,9 @@ import {View, Text, StyleSheet} from 'react-native';
 
 const cardImage = "https://cdn.iconscout.com/icon/free/png-512/mastercard-25-675722.png"
 
+// Anotações
+// Criar um gráfico com as categorias de despesas.
+
 export default function CardGraphics(){
     return(
         <View style={styles.container}>

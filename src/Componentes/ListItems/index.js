@@ -1,6 +1,9 @@
 import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import ModalComp from "../ModalComp";
+
 
 export default function ListItems({
     iconeLegend,
@@ -8,6 +11,7 @@ export default function ListItems({
     legend,
     valor
 }){
+    const navigation = useNavigation()
     return(
             <View style={styles.container}>
                 <TouchableOpacity style={styles.content}>
