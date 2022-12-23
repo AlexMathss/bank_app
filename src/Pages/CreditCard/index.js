@@ -1,41 +1,45 @@
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import CardInfo from '../../SubPages/CreditCard/CardInfo';
 
 export default function CreditCard(){
     return(
-        <View style={styles.container}>
-            <View style={styles.header}>
-                <View style={styles.iconLeft}>
-                    <AntDesign name="left" size={25} color="#FFF"/>
-                </View>
+        <ScrollView>
+            <View style={styles.container}>
+                <View style={{height: 150, backgroundColor: '#008B8B',}}>
+                    <View style={styles.header}>
+                        <View style={styles.iconLeft}>
+                            <AntDesign name="left" size={25} color="#FFF"/>
+                        </View>
 
-                <View style={styles.iconRight}>
-                    <AntDesign name="inbox" size={25} color="#FFF"/>
-                    <Entypo name="dots-three-horizontal" size={25} color="#FFF"/>
-                </View>
-            </View>
+                        <View style={styles.iconRight}>
+                            <AntDesign name="inbox" size={25} color="#FFF"/>
+                            <Entypo name="dots-three-horizontal" size={25} color="#FFF"/>
+                        </View>
+                    </View>
 
-            <View style={styles.subHeader}>
-                <Text style={styles.headerTitle}>Cartões de Crédito</Text>
-                <View style={styles.headerButton}>
-                    <TouchableOpacity style={styles.buttonOpen}>
-                        <Text style={styles.btnText}>Abertas</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.buttonClose}>
-                        <Text style={styles.btnText}>Fechadas</Text>
-                    </TouchableOpacity>
+                    <View style={styles.subHeader}>
+                        <Text style={styles.headerTitle}>Cartões de Crédito</Text>
+                        <View style={styles.headerButton}>
+                            <TouchableOpacity style={styles.buttonOpen}>
+                                <Text style={styles.btnText}>Abertas</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.buttonClose}>
+                                <Text style={[styles.btnText, {color: 'gray'}]}>Fechadas</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
                 </View>
+                <CardInfo/>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        height: 150,
-        padding: 15,
-        backgroundColor: '#008B8B'
+        flex: 1,
     },
     header: {
         flexDirection:'row',
@@ -59,6 +63,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between'
     },
+    headerTitle: {
+        fontSize: 20,
+        color: '#FFF'
+    },
     headerButton: {
         width: '70%',
         backgroundColor: '#20B2AA',
@@ -76,11 +84,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 30
     },
+    btnText: {
+        fontSize: 20,
+        fontWeight: '500',
+        color: '#20B2AA'
+    },
     buttonClose: {
         width: 135,
         height: '100%',
         borderRadius: 30,
         alignItems: 'center',
         justifyContent: 'center'
-    }
+    },
 })
