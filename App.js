@@ -15,7 +15,6 @@ import CreditCard from './src/Pages/CreditCard';
 import NoteComp from './src/Componentes/NoteComp';
 import Button from './src/Componentes/Button';
 import Header from './src/Componentes/Header';
-import Teste from './src/Componentes/Teste';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
