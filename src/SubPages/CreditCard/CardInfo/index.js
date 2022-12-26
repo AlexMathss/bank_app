@@ -1,15 +1,16 @@
 import { AntDesign, Entypo, FontAwesome5 } from "@expo/vector-icons";
-import React from "react";
-import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useState} from "react";
+import {View, Text, Image, StyleSheet, TouchableOpacity, Modal, Pressable, TextInput, Alert} from 'react-native';
 
 const cardImage = "https://cdn.iconscout.com/icon/free/png-512/mastercard-25-675722.png"
 
 export default function CardInfo(){
+    const [modalVisible, setModalVisible] = useState(false);
+    
     return(
         
             <View style={styles.container}>
                 <View style={styles.cardMain}>
-                
                     <View style={styles.containerCard}>
                         <View style={styles.cardTitulo}>
                             <View style={styles.principal}>
@@ -59,10 +60,59 @@ export default function CardInfo(){
                         </TouchableOpacity>
                     </View>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                         <Text style={styles.addBtn}>Adicionar Cartão</Text>
                     </TouchableOpacity>
                 </View>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                >
+                    <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <View style={styles.containerModal}>
+                                <Text style={{fontSize: 25,}}>Preencha os campos</Text>
+                                <View style={styles.inputDados}>
+                                    <Text style={{fontSize: 16}}>Nome do Titular</Text>
+                                    <TextInput
+                                        placeholder="Alex Matheus"
+                                        style={{backgroundColor: 'red', height: 30}}
+                                    />
+                                </View>
+                                <View style={styles.inputDados}>
+                                    <Text>Numero do Cartão</Text>
+                                    <TextInput
+                                        placeholder="xxxx xxxx xxxx xxxx"
+                                        keyboardType="number-pad"
+                                        style={{backgroundColor: 'red', height: 30}}
+                                    />
+                                </View>
+                                <View>
+                                    <View>
+                                        <Text>Validade</Text>
+                                        <TextInput
+                                            placeholder="00/00"
+                                        />
+                                    </View>
+                                    <View>
+                                        <Text>Cód. Segurança</Text>
+                                        <TextInput
+                                            placeholder="000"
+                                        />
+                                    </View>
+                                </View>
+                            </View>
+                            <Pressable
+                            style={[styles.button, styles.buttonClose]}
+                            onPress={() => setModalVisible(!modalVisible)}
+                            >
+                            <Text style={styles.textStyle}>OK</Text>
+                            </Pressable>
+                        </View>
+                    </View>
+
+                </Modal>
             </View>
        
     )
@@ -213,5 +263,72 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'purple',
         fontWeight: 'bold'
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "flex-start",
+        alignItems: "center",
+        paddingTop: 50
+    },
+      modalView: {
+        width: '100%',
+        height: '60%',
+        
+        backgroundColor: "blue",
+        borderRadius: 20,
+        alignItems: "center",
+        justifyContent: 'space-between',
+        paddingTop: 15,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+      },
+      modalButton: {
+        height: 40, 
+        justifyContent: 'space-between', 
+        width: '100%', 
+        flexDirection: 'row',
+        
+      },
+      button: {
+        elevation: 2,
+        backgroundColor: '#1C8BEB',
+        width: '100%',
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20
+      },
+      descricao: { 
+        height: '80%', 
+        width: '90%', 
+        alignItems: 'center', 
+        justifyContent: 'space-between'
+    },
+    titleModal: {
+        fontSize: 25
+    },
+    contentModal: { 
+        width: '100%', 
+        height: 120, 
+        justifyContent: 'space-between'
+    },
+    containerModal: {
+        height: '90%', 
+        width: '90%', 
+        backgroundColor: 'orange', 
+        alignItems: 'center'
+    },
+    inputDados: {
+        backgroundColor: 'blue', 
+        height: 50, 
+        width: '100%', 
+        justifyContent: 'space-between'
     }
 })

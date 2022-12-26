@@ -3,6 +3,9 @@ import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
 import CardPlan from '../../SubPages/Planejamento/CardPlan';
 
+//Adicionar uma DropDownList para selecionar os meses do ano.
+
+
 export default function Planejamento(){
     return(
         <ScrollView>

@@ -57,6 +57,7 @@ export default function Cards({
                         <Text style={styles.validade}>{dateValid}</Text>
                         <Text style={styles.month}>MM  YY</Text>
                     </View>
+                    
                     <Image source={{uri: cardImage}} style={styles.image}/>
                 </View>
             </View>

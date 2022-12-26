@@ -9,9 +9,9 @@ export default function CreditCard(){
             <View style={styles.container}>
                 <View style={{height: 150, backgroundColor: '#008B8B',}}>
                     <View style={styles.header}>
-                        <View style={styles.iconLeft}>
+                        <TouchableOpacity style={styles.iconLeft}>
                             <AntDesign name="left" size={25} color="#FFF"/>
-                        </View>
+                        </TouchableOpacity>
 
                         <View style={styles.iconRight}>
                             <AntDesign name="inbox" size={25} color="#FFF"/>
