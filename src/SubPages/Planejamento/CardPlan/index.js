@@ -11,11 +11,9 @@ export default function CardPlan(){
                 <Text style={styles.contentText}>
                     Ops!{'\n'}Nenhum planejamento para mostrar!
                 </Text>
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.buttonPlan}>
-                        <Text style={styles.btn}>Definir novo planejamento</Text>
-                    </TouchableOpacity>
-                </View>
+                <TouchableOpacity style={styles.buttonContainer}>
+                    <Text style={styles.btn}>Definir novo planejamento</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -23,7 +21,7 @@ export default function CardPlan(){
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'orange',
+        backgroundColor: '#FFF',
         height: 650,
         padding: 15,
         alignItems: 'center',
@@ -41,8 +39,22 @@ const styles = StyleSheet.create({
         width: 170,
         height: 170
     },
-    contentText: {},
-    buttonContainer: {},
-    buttonPlan: {},
-    btn: {}
+    contentText: {
+        fontSize: 25,
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+    buttonContainer: {
+        backgroundColor: '#7B68EE',
+        width: '75%',
+        height: '10%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20
+    },
+    btn: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'white'
+    }
 }) 

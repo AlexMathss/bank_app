@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     cardMain: {
         width: '100%',
         height: 100,
-        backgroundColor: 'orange',
+        backgroundColor: '#1C8BEB',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
         paddingLeft: 20,

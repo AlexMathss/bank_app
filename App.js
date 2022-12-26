@@ -80,7 +80,7 @@ export default function App() {
     <NavigationContainer>
         <StatusBar backgroundColor='#38A69D' barStyle="dark-content"/>
         <SafeAreaView style={{flex: 1, backgroundColor: '#FFF'}}>
-          <Header/>
+          <Header/> 
           <Stack.Navigator>
             <Stack.Screen name="Tabs" component={MyTabs} options={{headerShown: false}}/>
           </Stack.Navigator>
