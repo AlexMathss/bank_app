@@ -9,6 +9,7 @@ import CardMore from '../Pages/CardMore';
 import Informacoes from "../SubPages/Informacoes";
 import Premium from "../SubPages/Premium";
 import CreditCard from '../Pages/CreditCard';
+import Teste from "../Componentes/Teste";
 import { ScrollView } from "react-native";
 
 const Stack = createNativeStackNavigator();
@@ -43,6 +44,10 @@ export default function Routes(){
             <Stack.Screen
                 name="CreditCard"
                 component={CreditCard}
+            />
+            <Stack.Screen
+                name="Teste"
+                component={Teste}
             />
             
         </Stack.Navigator>

@@ -1,7 +1,8 @@
-import React from "react";
-import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import React, {useState} from "react";
+import {View, Text, Image, TouchableOpacity, StyleSheet, Pressable, Alert, Modal} from 'react-native';
 
 const cardImage = "https://cdn.iconscout.com/icon/free/png-512/mastercard-25-675722.png"
+import ModalFat from "../../Componentes/ModalFat";
 
 export default function Cards({
     bankName,
@@ -9,8 +10,45 @@ export default function Cards({
     nameCard,
     dateValid,
 }){
+    const [modalVisible, setModalVisible] = useState(false);
     return(
-        <TouchableOpacity activeOpacity={0.6} style={styles.containerCard}>
+        <>
+            <Modal
+            animationType="slide"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+                Alert.alert("Modal has been closed.");
+                setModalVisible(!modalVisible);
+            }}
+        >
+            <View style={styles.centeredView}>
+                <View style={styles.modalView}>
+                    <Text style={styles.modalText}>Fatura Aberta</Text>
+                    <Text style={styles.valor}>Valor: 139,99</Text>
+                    <Text style={styles.vencimento}>Vencimento: 29 dez 2022 </Text>
+                    <View style={{height: 40, justifyContent: 'space-between', width: '100%', flexDirection: 'row'}}>
+                        <TouchableOpacity
+                        style={[styles.button, styles.buttonClose, {borderBottomLeftRadius: 20}]}
+                        onPress={() => setModalVisible(!modalVisible)}
+                        >
+                        <Text style={styles.textStyle}>OK</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                        style={[styles.button, styles.buttonClose, {borderBottomRightRadius: 20}]}
+                        onPress={() => setModalVisible(!modalVisible)}
+                        >
+                        <Text style={styles.textStyle}>Histórico</Text>
+                        </TouchableOpacity>
+                    </View>
+                    
+                </View>
+            </View>
+        </Modal>
+        <Pressable
+        style={styles.containerCard}
+        onPress={() => setModalVisible(true)}
+        >
             <View style={styles.containerTitle}>
                 <Text style={styles.title}>
                     {bankName}
@@ -19,16 +57,18 @@ export default function Cards({
             <View style={styles.containerDados}>
                 <Text style={styles.numberCard}>{numberCard}</Text>
                 <View style={styles.dadosCliente}>
-                    <Text style={{color: '#e0e0de', fontSize: 17, fontWeight: '600'}}>{nameCard}</Text>
+                    <Text style={styles.name}>{nameCard}</Text>
                     <View style={styles.date}>
-                        <Text style={{textTransform: 'uppercase', color: '#e0e0de', fontWeight: '500', fontSize: 12}}>Expiry</Text>
-                        <Text style={{fontSize: 17, color: '#e0e0de'}}>{dateValid}</Text>
-                        <Text style={{fontSize: '12', color: '#e0e0de'}}>MM  YY</Text>
+                        <Text style={styles.vencimento}>Expiry</Text>
+                        <Text style={styles.validade}>{dateValid}</Text>
+                        <Text style={styles.month}>MM  YY</Text>
                     </View>
                     <Image source={{uri: cardImage}} style={styles.image}/>
                 </View>
             </View>
-        </TouchableOpacity>
+        </Pressable>
+        </>
+        
     )
 }
 
@@ -39,8 +79,10 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         padding: 15,
         justifyContent: 'space-between',
-        backgroundColor: 'black',
-        marginRight: 10
+        backgroundColor: '#1C8BEB',
+        marginRight: 10,
+        borderWidth: 1,
+        borderColor: 'lightgray'
     },
     title: {
         fontSize: 23,
@@ -64,5 +106,68 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-    }
+    },
+    name: {
+        color: '#e0e0de',
+        fontSize: 17,
+        fontWeight: '600'
+    },
+    vencimento: {
+        textTransform: 'uppercase', 
+        color: '#e0e0de', 
+        fontWeight: '500', 
+        fontSize: 12
+    },
+    validade: {
+        fontSize: 17, 
+        color: '#e0e0de'
+    },
+    month: {
+        fontSize: '12', 
+        color: '#e0e0de'
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+    },
+      modalView: {
+        margin: 20,
+        width: 250,
+        height: 150,
+        backgroundColor: "white",
+        borderRadius: 20,
+        alignItems: "center",
+        justifyContent: 'space-between',
+        paddingTop: 15,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+      },
+      modalText: {
+        fontSize: 20,
+        color: 'green'
+      },
+      valor: {
+        fontSize: 18
+      },
+      vencimento: {
+        fontSize: 16,
+        color: 'orange'
+      },
+      button: {
+        elevation: 2,
+        backgroundColor: '#1C8BEB',
+        width: '100%',
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '50%'
+      }
 })
