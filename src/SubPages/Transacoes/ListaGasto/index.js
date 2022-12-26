@@ -36,48 +36,63 @@ export default function ListaGasto(){
                             />
                         </View>
                     </View>
-                    <View style={{width: '100%', padding: 15, backgroundColor: '#FFF',}}>
+                    <View style={styles.listContent}>
                         <ListItems
                             iconeLegend={<Ionicons name="car-outline" size={30} color="#1C8BEB"/>}
                             title={'Parcela Carro'}
                             legend={'Transporte'}
+                            vencimento={'26/12/2022'}
                             valor={'400,00'}
+                            pago={'23/12/2022'}
                         />
                         <ListItems
                             iconeLegend={<Ionicons name="ios-medkit-outline" size={30} color="#1C8BEB"/>}
                             title={'Plano de Saúde'}
                             legend={'Saúde'}
+                            vencimento={'26/12/2022'}
                             valor={'120,00'}
+                            pago={'23/12/2022'}
                         />
                         <ListItems
                             iconeLegend={<Ionicons name="ios-home-outline" size={30} color="#1C8BEB"/>}
                             title={'Internet'}
                             legend={'Casa'}
+                            vencimento={'26/12/2022'}
                             valor={'132,17'}
+                            pago={'23/12/2022'}
                         />
                         <ListItems
                             iconeLegend={<MaterialCommunityIcons name="umbrella-beach-outline" size={30} color="#1C8BEB"/>}
                             title={'HBO Max'}
                             legend={'Lazer'}
+                            vencimento={'26/12/2022'}
                             valor={'19,99'}
+                            pago={'23/12/2022'}
                         />
                         <ListItems
                             iconeLegend={<MaterialCommunityIcons name="umbrella-beach-outline" size={30} color="#1C8BEB"/>}
                             title={'Netflix'}
                             legend={'Lazer'}
+                            vencimento={'26/12/2022'}
                             valor={'55,99'}
+                            pago={'23/12/2022'}
+
                         />
                         <ListItems
                             iconeLegend={<Ionicons name="ios-home-outline" size={30} color="#1C8BEB"/>}
                             title={'Amazon Prime'}
                             legend={'Casa'}
+                            vencimento={'26/12/2022'}
                             valor={'14,90'}
+                            pago={'23/12/2022'}
                         />
                         <ListItems
                             iconeLegend={<FontAwesome name="tv" size={30} color="#1C8BEB"/>}
                             title={'Monitor'}
                             legend={'Eletrônico'}
+                            vencimento={'26/12/2022'}
                             valor={'100,00'}
+                            pago={'23/12/2022'}
                         />
                     </View>
                 </ScrollView>
@@ -162,5 +177,10 @@ const styles = StyleSheet.create({
         width: '93%',
         borderTopEndRadius: 10,
         borderBottomEndRadius: 10
+    },
+    listContent: {
+        width: '100%', 
+        padding: 15, 
+        backgroundColor: '#FFF',
     }
 })
