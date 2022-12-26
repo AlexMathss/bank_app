@@ -27,18 +27,12 @@ export default function Cards({
                     <Text style={styles.modalText}>Fatura Aberta</Text>
                     <Text style={styles.valor}>Valor: 139,99</Text>
                     <Text style={styles.vencimento}>Vencimento: 29 dez 2022 </Text>
-                    <View style={{height: 40, justifyContent: 'space-between', width: '100%', flexDirection: 'row'}}>
+                    <View style={{height: 40, width: '100%'}}>
                         <TouchableOpacity
-                        style={[styles.button, styles.buttonClose, {borderBottomLeftRadius: 20}]}
+                        style={[styles.button, styles.buttonClose]}
                         onPress={() => setModalVisible(!modalVisible)}
                         >
                         <Text style={styles.textStyle}>OK</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                        style={[styles.button, styles.buttonClose, {borderBottomRightRadius: 20}]}
-                        onPress={() => setModalVisible(!modalVisible)}
-                        >
-                        <Text style={styles.textStyle}>Histórico</Text>
                         </TouchableOpacity>
                     </View>
                     
@@ -59,7 +53,7 @@ export default function Cards({
                 <View style={styles.dadosCliente}>
                     <Text style={styles.name}>{nameCard}</Text>
                     <View style={styles.date}>
-                        <Text style={styles.vencimento}>Expiry</Text>
+                        <Text style={styles.vencimentoCard}>Expiry</Text>
                         <Text style={styles.validade}>{dateValid}</Text>
                         <Text style={styles.month}>MM  YY</Text>
                     </View>
@@ -112,7 +106,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         fontWeight: '600'
     },
-    vencimento: {
+    vencimentoCard: {
         textTransform: 'uppercase', 
         color: '#e0e0de', 
         fontWeight: '500', 
@@ -168,6 +162,7 @@ const styles = StyleSheet.create({
         height: 40,
         alignItems: 'center',
         justifyContent: 'center',
-        width: '50%'
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20
       }
 })

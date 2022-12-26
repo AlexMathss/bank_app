@@ -1,8 +1,10 @@
 import { EvilIcons, AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React, {useState} from "react";
 
 import {View, Text, StyleSheet, TouchableOpacity, ScrollView, Modal, Alert} from 'react-native';
 import Cards from "../../../Componentes/Cards";
+import Historico from "../../../Componentes/Historico";
 
 
 
@@ -11,6 +13,7 @@ import Cards from "../../../Componentes/Cards";
 
 export default function CreditCard(){
     const [modalVisible, setModalVisible] = useState(false);
+    const navigation = useNavigation();
     return(
         <View style={styles.container}>
 
@@ -26,14 +29,28 @@ export default function CreditCard(){
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
                         <ScrollView style={{width: '100%'}}>
-                            <View style={{backgroundColor: 'orange', width: '100%', height: 70, alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', paddingHorizontal: 10}}>
-                                <Text>Teste</Text>
-                                <Text>Teste</Text>
-                                <Text>Teste</Text>
+                            <Historico month={'Dez/22'} fatura={'Fatura Aberta!'} valor={'6500'}/>
+                            <Historico month={'Nov/22'} fatura={'Fatura Fechada!'} valor={'451,00'}/>
+                            <Historico month={'Out/22'} fatura={'Fatura Fechada!'} valor={'345,00'}/>
+                            <Historico month={'Set/22'} fatura={'Fatura Fechada!'} valor={'135,00'}/>
+                            <Historico month={'Ago/22'} fatura={'Fatura Fechada!'} valor={'650,00'}/>
+                            <Historico month={'Jul/22'} fatura={'Fatura Fechada!'} valor={'120,00'}/>
+                            <Historico month={'Jun/22'} fatura={'Fatura Fechada!'} valor={'450,00'}/>
+                            <Historico month={'Mai/22'} fatura={'Fatura Fechada!'} valor={'190,00'}/>
+                            <Historico month={'Abr/22'} fatura={'Fatura Fechada!'} valor={'200,00'}/>
+                            <Historico month={'Mar/22'} fatura={'Fatura Fechada!'} valor={'150,00'}/>
+                            <Historico month={'Fev/22'} fatura={'Fatura Fechada!'} valor={'520,00'}/>
+                            <Historico month={'Jan/22'} fatura={'Fatura Fechada!'} valor={'220,00'}/>
+
+                            <View style={styles.btnFaturas}>
+                                <TouchableOpacity onPress={() => navigation.navigate('Transactions', setModalVisible(!modalVisible))}
+                                style={styles.btnContent}>
+                                    <Text style={styles.btnText}>Para mais detalhes consultar transações</Text>
+                                </TouchableOpacity>
                             </View>
                             
                         </ScrollView>
-                        <View style={{height: 40, justifyContent: 'space-between', width: '100%', flexDirection: 'row'}}>
+                        <View style={styles.modalButton}>
                             <TouchableOpacity
                             style={[styles.button, styles.buttonClose, {borderBottomLeftRadius: 20}]}
                             onPress={() => setModalVisible(!modalVisible)}
@@ -109,6 +126,32 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 4,
         elevation: 5
+      },
+      btnFaturas: {
+        height: 40, 
+        justifyContent: 'space-between', 
+        width: '100%', 
+        flexDirection: 'row',
+        backgroundColor: '#1C8BEB',
+        borderBottomWidth: 1,
+        borderBottomColor: '#FFF'
+      },
+      btnContent: {
+        height: '100%', 
+        width: '100%', 
+        alignItems: 'center', 
+        justifyContent: 'center'
+      },
+      btnText: {
+        fontSize: 17, 
+        color: 'white', 
+        fontWeight: '600'
+      },
+      modalButton: {
+        height: 40, 
+        justifyContent: 'space-between', 
+        width: '100%', 
+        flexDirection: 'row'
       },
       modalText: {
         fontSize: 20,
