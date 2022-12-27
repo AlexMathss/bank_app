@@ -1,6 +1,7 @@
 import { AntDesign, Entypo, FontAwesome5 } from "@expo/vector-icons";
 import React, {useState} from "react";
 import {View, Text, Image, StyleSheet, TouchableOpacity, Modal, TextInput} from 'react-native';
+import ButtonDespesas from "../../../Componentes/ButtonDespesas";
 
 const cardImage = "https://cdn.iconscout.com/icon/free/png-512/mastercard-25-675722.png"
 
@@ -54,9 +55,7 @@ export default function CardInfo(){
                                 <Text style={styles.graphText}>9.22%</Text>
                             </View>
                         </View>
-                        <TouchableOpacity style={styles.buttonCartao}>
-                            <Text style={styles.cartaoBtn}>Adicionar despesas</Text>
-                        </TouchableOpacity>
+                        <ButtonDespesas/>
                     </View>
 
                     <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
