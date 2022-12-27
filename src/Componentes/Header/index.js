@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import { Entypo, FontAwesome, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import DropDown from "../DropDown";
+import { useNavigation } from "@react-navigation/native";
+import Profile from "../Profile";
 
 // Anotações
 // Criar um DROPLIST para selecionar os meses.
@@ -16,7 +18,10 @@ let fruits = [
     {id: 4, name:"mango"}
 ]
 
+
+
 export default function Header(){
+    const navigation = useNavigation();
     const [selectItem, setSelectItem] = useState(null)
 
     const onSelect = (item) => {
@@ -25,7 +30,7 @@ export default function Header(){
 
     return(
         <View style={styles.dataIcons}>
-            <TouchableOpacity style={styles.userIcon}>
+            <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.userIcon}>
                     <FontAwesome name="user-circle" size={32} color="#828486"/>
                 </TouchableOpacity>
                 

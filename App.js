@@ -15,6 +15,7 @@ import CreditCard from './src/Pages/CreditCard';
 import NoteComp from './src/Componentes/NoteComp';
 import Button from './src/Componentes/Button';
 import Header from './src/Componentes/Header';
+import Profile from './src/Componentes/Profile';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -84,6 +85,7 @@ export default function App() {
           <Header/> 
           <Stack.Navigator>
             <Stack.Screen name="Tabs" component={MyTabs} options={{headerShown: false}}/>
+            <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
           </Stack.Navigator>
         </SafeAreaView>
     </NavigationContainer>

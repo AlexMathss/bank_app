@@ -11,6 +11,7 @@ import Premium from "../SubPages/Premium";
 import CreditCard from '../Pages/CreditCard';
 import Teste from "../Componentes/Teste";
 import { ScrollView } from "react-native";
+import Profile from "../Componentes/Profile";
 
 const Stack = createNativeStackNavigator();
 
@@ -46,8 +47,8 @@ export default function Routes(){
                 component={CreditCard}
             />
             <Stack.Screen
-                name="Teste"
-                component={Teste}
+                name="Profile"
+                component={Profile}
             />
             
         </Stack.Navigator>

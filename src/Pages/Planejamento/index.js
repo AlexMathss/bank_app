@@ -1,18 +1,19 @@
 import { AntDesign } from '@expo/vector-icons';
-import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
+import React, { useState } from 'react';
+import {View, Text, TouchableOpacity, StyleSheet, ScrollView, Modal} from 'react-native';
 import CardPlan from '../../SubPages/Planejamento/CardPlan';
 
 //Adicionar uma DropDownList para selecionar os meses do ano.
 
 
 export default function Planejamento(){
+    const [modalVisible, setModalVisible] = useState(false);
     return(
         <ScrollView>
             <View style={styles.cardMain}>
                 <View style={styles.header}>
                     <View style={styles.options}>
-                        <TouchableOpacity style={styles.buttonMenu}>
+                        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.buttonMenu}>
                             <Text style={styles.btnText}>Mensal</Text>
                             <AntDesign name="down" size={15} color="#FFF"/>
                         </TouchableOpacity>
@@ -32,6 +33,17 @@ export default function Planejamento(){
                 </View>
             </View>
             <CardPlan/>
+            <Modal
+                animationType='slide'
+                transparent={true}
+                visible={modalVisible}
+            >
+                <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+
+                    </View>
+                </View>
+            </Modal>
         </ScrollView>
     )
 }
@@ -85,4 +97,27 @@ const styles = StyleSheet.create({
         color: '#FFF',
         fontWeight: '700'
     },
+    centeredView: {
+        flex: 1,
+        justifyContent: "flex-start",
+        alignItems: "center",
+        marginTop: 150
+    },
+      modalView: {
+        width: '50%',
+        height: '20%',
+        backgroundColor: "white",
+        borderRadius: 20,
+        alignItems: "center",
+        justifyContent: 'space-between',
+        paddingTop: 15,
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+      },
 })
