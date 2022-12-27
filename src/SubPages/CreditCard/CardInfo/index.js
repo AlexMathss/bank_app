@@ -1,12 +1,11 @@
 import { AntDesign, Entypo, FontAwesome5 } from "@expo/vector-icons";
 import React, {useState} from "react";
-import {View, Text, Image, StyleSheet, TouchableOpacity, Modal, Pressable, TextInput, Alert} from 'react-native';
+import {View, Text, Image, StyleSheet, TouchableOpacity, Modal, TextInput} from 'react-native';
 
 const cardImage = "https://cdn.iconscout.com/icon/free/png-512/mastercard-25-675722.png"
 
 export default function CardInfo(){
     const [modalVisible, setModalVisible] = useState(false);
-    
     return(
         
             <View style={styles.container}>
@@ -63,52 +62,69 @@ export default function CardInfo(){
                     <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                         <Text style={styles.addBtn}>Adicionar Cartão</Text>
                     </TouchableOpacity>
+                    
                 </View>
+                
                 <Modal
                     animationType="slide"
                     transparent={true}
                     visible={modalVisible}
                 >
-                    <View style={styles.centeredView}>
+                    <View style={styles.centeredView} behavior="padding">
                         <View style={styles.modalView}>
                             <View style={styles.containerModal}>
-                                <Text style={{fontSize: 25,}}>Preencha os campos</Text>
+                                <Text style={styles.titleModal}>Preencha os campos</Text>
                                 <View style={styles.inputDados}>
-                                    <Text style={{fontSize: 16}}>Nome do Titular</Text>
+                                    <Text style={styles.inputTitle}>Nome do Titular</Text>
                                     <TextInput
                                         placeholder="Alex Matheus"
-                                        style={{backgroundColor: 'red', height: 30}}
+                                        style={styles.inputSize}
                                     />
                                 </View>
                                 <View style={styles.inputDados}>
-                                    <Text>Numero do Cartão</Text>
+                                    <Text style={styles.inputTitle}>Numero do Cartão</Text>
                                     <TextInput
                                         placeholder="xxxx xxxx xxxx xxxx"
                                         keyboardType="number-pad"
-                                        style={{backgroundColor: 'red', height: 30}}
+                                        style={styles.inputSize}
                                     />
                                 </View>
-                                <View>
-                                    <View>
-                                        <Text>Validade</Text>
+                                <View style={styles.inputDates}>
+                                    <View style={styles.seguranca}>
+                                        <Text style={styles.inputTitle}>Validade</Text>
                                         <TextInput
                                             placeholder="00/00"
+                                            keyboardType="numeric"
+                                            style={styles.inputSize}
                                         />
                                     </View>
-                                    <View>
-                                        <Text>Cód. Segurança</Text>
+                                    <View style={styles.seguranca}>
+                                        <Text style={styles.inputTitle}>Cód. Segurança</Text>
                                         <TextInput
                                             placeholder="000"
+                                            keyboardType="numeric"
+                                            style={styles.inputSize}
                                         />
                                     </View>
                                 </View>
                             </View>
-                            <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => setModalVisible(!modalVisible)}
-                            >
-                            <Text style={styles.textStyle}>OK</Text>
-                            </Pressable>
+                            <View style={{flexDirection: 'row'}}>
+                                <TouchableOpacity
+                                    style={[styles.button, styles.buttonClose, {borderBottomLeftRadius: 20}]}
+                                    activeOpacity={0.8}
+                                    onPress={() => setModalVisible(!modalVisible)}
+                                >
+                                <Text style={styles.textStyle}>OK</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    style={[styles.button, styles.buttonClose, {backgroundColor: 'red', borderBottomRightRadius: 20}]}
+                                    activeOpacity={0.8}
+                                    onPress={() => setModalVisible(!modalVisible)}
+                                >
+                                <Text style={[styles.textStyle, {color: '#FFF'}]}>Cancelar</Text>
+                                </TouchableOpacity>
+                            </View>
+                            
                         </View>
                     </View>
 
@@ -266,15 +282,14 @@ const styles = StyleSheet.create({
     },
     centeredView: {
         flex: 1,
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
-        paddingTop: 50
+        marginBottom: 20
     },
       modalView: {
         width: '100%',
-        height: '60%',
-        
-        backgroundColor: "blue",
+        height: '35%',
+        backgroundColor: "#fff",
         borderRadius: 20,
         alignItems: "center",
         justifyContent: 'space-between',
@@ -298,12 +313,13 @@ const styles = StyleSheet.create({
       button: {
         elevation: 2,
         backgroundColor: '#1C8BEB',
-        width: '100%',
-        height: 40,
+        width: '50%',
+        height: 45,
         alignItems: 'center',
         justifyContent: 'center',
-        borderBottomLeftRadius: 20,
-        borderBottomRightRadius: 20
+      },
+      textStyle: {
+         fontWeight: '600'
       },
       descricao: { 
         height: '80%', 
@@ -320,15 +336,39 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     containerModal: {
-        height: '90%', 
-        width: '90%', 
-        backgroundColor: 'orange', 
-        alignItems: 'center'
+        height: '80%', 
+        width: '90%',
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
-    inputDados: {
-        backgroundColor: 'blue', 
+    inputDados: { 
         height: 50, 
         width: '100%', 
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderWidth: 1,
+        borderColor: 'lightgray',
+        borderRadius: 5,
+        padding: 5
+    },
+    inputTitle: {
+        fontSize: 16
+    },
+    inputSize: {
+        height: 30,
+    },
+    inputDates: {
+        width: '100%',
+        height: 50,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    seguranca: {
+        width: '45%',
+        height: 50,
+        justifyContent: 'space-between',
+        borderWidth: 1,
+        borderColor: 'lightgray',
+        borderRadius: 5,
+        padding: 5
     }
 })
