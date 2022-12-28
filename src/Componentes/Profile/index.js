@@ -1,8 +1,10 @@
 import { EvilIcons, Feather, Foundation, MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity, ImageBackground, ScrollView} from 'react-native';
 
 export default function Profile(){
+    const navigation = useNavigation();
     return(
         <View style={styles.container}>
 
@@ -28,7 +30,7 @@ export default function Profile(){
                     </View>
                 </View>
                 <View style={styles.footer}>
-                    <TouchableOpacity activeOpacity={1} style={styles.buttonLeft}>
+                    <TouchableOpacity activeOpacity={1} onPress={() => navigation.navigate('PlanFree')} style={styles.buttonLeft}>
                         <MaterialCommunityIcons name="crown-circle" size={40} color="#FFF"/>
                         <View style={styles.btntextContainer}>
                             <Text style={styles.situation}>Situação</Text>
