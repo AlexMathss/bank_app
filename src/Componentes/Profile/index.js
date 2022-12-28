@@ -10,7 +10,7 @@ export default function Profile(){
 
             <View style={styles.container_top}>
                 <View style={styles.header}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.goBack('Home')}>
                         <EvilIcons name="chevron-left" size={30} color="#FFF"/>
                     </TouchableOpacity>
                     <Text style={styles.headerTitle}>Perfil</Text>
