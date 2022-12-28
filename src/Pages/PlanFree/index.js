@@ -4,6 +4,7 @@ import React from "react";
 import {Text, Image, View, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
 
 import * as Animatable from 'react-native-animatable'
+import Vantagens from "../../SubPages/PlanFree/Vantagens";
 
 
 export default function PlanFree(){
@@ -65,6 +66,7 @@ export default function PlanFree(){
                 
             
             </Animatable.View>
+            <Vantagens/>
             </ScrollView>
     )
 }
