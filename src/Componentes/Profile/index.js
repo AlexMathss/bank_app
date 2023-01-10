@@ -20,7 +20,7 @@ export default function Profile(){
                 </View>
                 <View style={styles.content}>
                     <View style={styles.imageProfile}>
-                        <TouchableOpacity style={styles.editButton}>
+                        <TouchableOpacity style={styles.editButton} onPress={() => navigation.navigate('Questions')}>
                             <MaterialCommunityIcons name="pencil-outline" size={30} color="#FFF"/>
                         </TouchableOpacity>
                     </View>

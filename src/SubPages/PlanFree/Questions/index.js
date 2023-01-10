@@ -1,14 +1,26 @@
 import React from "react";
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import QuestionsComp from "../../../Componentes/QuestionsComp";
 
 export default function Questions(){
     
     return(
-        <View>
-           <Text>Perguntas frequentes</Text>
-           <View>
-            
-           </View>
+        <View style={styles.container}>
+           <Text style={styles.title}>Perguntas frequentes</Text>
+           <QuestionsComp/>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'orange',
+        flex: 1,
+        alignItems: 'center'
+    },
+    title: {
+        fontSize: 25,
+        fontWeight : '600',
+        marginBottom: 40
+    }
+})
