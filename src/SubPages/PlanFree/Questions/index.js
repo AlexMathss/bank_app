@@ -15,11 +15,13 @@ export default function Questions(){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#FFF'
     },
     title: {
         fontSize: 25,
         fontWeight : '600',
-        marginBottom: 40
+        marginBottom: 30,
+        marginTop: 20
     }
 })

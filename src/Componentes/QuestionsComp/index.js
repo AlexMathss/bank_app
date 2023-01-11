@@ -16,7 +16,7 @@ export default function QuestionsComp(){
                     </TouchableOpacity>
                 </View>
             </View>
-            <View style={[styles.container_card, {height: 220}]}>
+            <View style={[styles.container_card, {height: 220, marginBottom: 20, marginTop: 20}]}>
                 <View style={[styles.content_1, {height: 90}]}>
                     <Text style={styles.content_1_title}>Quais as formas de pagamentos aceitas para me tornar Mobills Premium pela Apple?</Text>
                 </View>
@@ -28,7 +28,7 @@ export default function QuestionsComp(){
                     </Text>
                 </View>
             </View>
-            <View style={[styles.container_card, { height: 220}]}>
+            <View style={[styles.container_card, { height: 220, marginBottom: 10}]}>
                 <View style={[styles.content_1, {height: 90}]}>
                     <Text style={styles.content_1_title}>Fiz minha assinatura em uma plataforma. Ela vale também para as outras?</Text>
                 </View>
@@ -51,19 +51,20 @@ const styles = StyleSheet.create({
     },
     container_card: {
         borderWidth: 2,
-        borderColor: 'gray',
+        borderColor: '#eef3f9',
         borderRadius: 23
     },
     content_1: {
-        backgroundColor: 'gray',
+        backgroundColor: '#eef3f9',
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 20
+        borderRadius: 20,
     },
     content_1_title: {
         fontSize: 18,
-        fontWeight: '600'
+        fontWeight: '600',
+        textAlign: 'center'
     },
     content_2: {
         paddingHorizontal: 15,

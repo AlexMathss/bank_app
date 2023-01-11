@@ -5,6 +5,7 @@ import {Text, Image, View, TouchableOpacity, StyleSheet, ScrollView} from 'react
 
 import * as Animatable from 'react-native-animatable'
 import Comentarios from "../../SubPages/PlanFree/Comentarios";
+import Questions from "../../SubPages/PlanFree/Questions";
 import Vantagens from "../../SubPages/PlanFree/Vantagens";
 
 
@@ -69,6 +70,7 @@ export default function PlanFree(){
             </Animatable.View>
             <Vantagens/>
             <Comentarios/>
+            <Questions/>
             </ScrollView>
     )
 }
