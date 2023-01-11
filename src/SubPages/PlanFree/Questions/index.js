@@ -14,7 +14,6 @@ export default function Questions(){
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'orange',
         flex: 1,
         alignItems: 'center'
     },
