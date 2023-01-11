@@ -18,6 +18,7 @@ import Header from './src/Componentes/Header';
 import Profile from './src/Componentes/Profile';
 import PlanFree from './src/Pages/PlanFree';
 import Questions from './src/SubPages/PlanFree/Questions';
+import Points from './src/SubPages/PlanFree/Points';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -89,7 +90,7 @@ export default function App() {
             <Stack.Screen name="Tabs" component={MyTabs} options={{headerShown: false}}/>
             <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}}/>
             <Stack.Screen name="PlanFree" component={PlanFree} options={{headerShown: false, gestureDirection: 'vertical', gestureEnabled: true, animationDuration: 600}}/>
-            <Stack.Screen name="Questions" component={Questions} options={{headerShown: false, gestureDirection: 'vertical', gestureEnabled: true, animationDuration: 600}}/>
+            <Stack.Screen name="Points" component={Points} options={{headerShown: false, gestureDirection: 'vertical', gestureEnabled: true, animationDuration: 600}}/>
           </Stack.Navigator>
         </SafeAreaView>
     </NavigationContainer>

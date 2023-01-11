@@ -20,7 +20,7 @@ export default function Profile(){
                 </View>
                 <View style={styles.content}>
                     <View style={styles.imageProfile}>
-                        <TouchableOpacity style={styles.editButton} onPress={() => navigation.navigate('Questions')}>
+                        <TouchableOpacity style={styles.editButton}>
                             <MaterialCommunityIcons name="pencil-outline" size={30} color="#FFF"/>
                         </TouchableOpacity>
                     </View>
@@ -37,7 +37,7 @@ export default function Profile(){
                             <Text style={styles.plan}>Free</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={1} style={styles.buttonRight}>
+                    <TouchableOpacity activeOpacity={1} style={styles.buttonRight} onPress={() => navigation.navigate('Points')}>
                         <MaterialCommunityIcons name="crown-circle" size={40} color="#FFF"/>
                         <View style={styles.btntextContainer}>
                             <Text style={styles.situation}>Pontos Mob</Text>

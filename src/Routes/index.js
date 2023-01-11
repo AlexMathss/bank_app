@@ -14,6 +14,7 @@ import { ScrollView } from "react-native";
 import Profile from "../Componentes/Profile";
 import PlanFree from "../Pages/PlanFree";
 import Questions from "../SubPages/PlanFree/Questions";
+import Points from "../SubPages/PlanFree/Points";
 
 const Stack = createNativeStackNavigator();
 
@@ -60,6 +61,10 @@ export default function Routes(){
             <Stack.Screen
                 name="Questions"
                 component={Questions}
+            />
+            <Stack.Screen
+                name="Points"
+                component={Points}
             />
             
         </Stack.Navigator>
