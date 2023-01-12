@@ -1,5 +1,5 @@
 import React from "react";
-import {View} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 
 
 
@@ -11,7 +11,7 @@ export default function Partiners({
     return(
         <View style={styles.container}>
             <View style={styles.containerLogo}>
-                <Text>Logo</Text>
+                <View style={styles.logo}/>
             </View>
             <View style={styles.content}>
                 <Text style={styles.title}>Ganhe</Text>
@@ -24,10 +24,18 @@ export default function Partiners({
 
 const styles = StyleSheet.create({
     container: {
-
+        backgroundColor: 'green',
+        width: 120,
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
     containerLogo: {
 
+    },
+    logo: {
+        width: 70,
+        height: 70,
+        backgroundColor: 'orange'
     },
     content: {
 
@@ -39,6 +47,6 @@ const styles = StyleSheet.create({
 
     },
     description: {
-        
+
     }
 })
