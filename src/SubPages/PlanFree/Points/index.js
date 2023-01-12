@@ -2,6 +2,7 @@ import React from "react";
 import {ScrollView, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
+import Parceiros from "../Parceiros";
 
 export default function Points(){
     const navigation = useNavigation();
@@ -23,6 +24,7 @@ export default function Points(){
                         <Text style={styles.subTitle}>Equivalem a <Text style={{color: 'green'}}>R$ 1,19</Text> ou mais</Text>
                     </View>
                 </View>
+                <Parceiros/>
             </ScrollView>
         </View>
     )
