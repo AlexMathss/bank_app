@@ -1,5 +1,5 @@
 import React from "react";
-import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
 
 
 
@@ -12,7 +12,7 @@ export default function Partiners({
         <View style={styles.container}>
             <View style={styles.containerLogo}>
                 <View style={styles.logo}>
-                    <Text style={{fontSize: 30, color: '#FFF', fontWeight: 'bold'}}>L</Text>
+                    <Image source={imgLogo} style={{width: '100%', height: '100%', borderRadius: 50}}/>
                 </View>
             </View>
             <TouchableOpacity activeOpacity={0.5} style={styles.content}>

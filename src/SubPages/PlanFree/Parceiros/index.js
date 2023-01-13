@@ -20,11 +20,12 @@ export default function Parceiros(){
                 <Text style={styles.title}>Ofertas</Text>
                 <View style={styles.wallets}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <Partiners pontos={'5000 Pts'} descriptions={'Mobils'}/>
-                        <Partiners pontos={'1600 Pts'} descriptions={'Cartão Will'}/>
-                        <Partiners pontos={'4500 Pts'} descriptions={'Empréstimo'}/>
-                        <Partiners pontos={'2000 Pts'} descriptions={'Investimentos'}/>
-                        <Partiners pontos={'150 Pts'} descriptions={'Sair das Dividas'}/>
+                        <Partiners pontos={'200 Pts'} descriptions={'Mobils'} imgLogo={require('../../../assets/imagens/jeitoo.png')}/>
+                        <Partiners pontos={'1600 Pts'} descriptions={'Cartão Will'} imgLogo={require('../../../assets/imagens/will.png')}/>
+                        <Partiners pontos={'4500 Pts'} descriptions={'Empréstimo'} imgLogo={require('../../../assets/imagens/sim.png')}/>
+                        <Partiners pontos={'2000 Pts'} descriptions={'Investimentos'} imgLogo={require('../../../assets/imagens/toro.png')}/>
+                        <Partiners pontos={'150 Pts'} descriptions={'Sair das Dividas'} imgLogo={require('../../../assets/imagens/acordo.png')}/>
+                        <Partiners pontos={'2200 Pts'} descriptions={'Limpe seu nome'} imgLogo={require('../../../assets/imagens/resolvvi.png')}/>
                     </ScrollView>
                 </View>
             </View>
@@ -52,8 +53,43 @@ export default function Parceiros(){
                     conteudo={'Crédito para você usar como quiser. Dê um jeito na sua vida financeira e saia do vermelho. Sem precisar de conta bancária e sem anuidade'}
                     btnText={'Ganhe 200 Pts'}
                     value={'2,00'}
-                    />
-                    
+                    logoPng={require('../../../assets/imagens/jeitoo.png')}
+                />
+                <PartinersCard 
+                    title={'Acordo Certo'} 
+                    conteudo={'Negocie suas dividas com até 95% de desconto e sem precisar sair de casa!'}
+                    btnText={'Ganhe 150 Pts'}
+                    value={'1,50'}
+                    logoPng={require('../../../assets/imagens/acordo.png')}
+                />
+                <PartinersCard 
+                    title={'Resolvvi'} 
+                    conteudo={'Limpe seu nome, receba sua indenização e você só paga se ganhar!'}
+                    btnText={'Ganhe 2200 Pts'}
+                    value={'1,50'}
+                    logoPng={require('../../../assets/imagens/resolvvi.png')}
+                />
+                <PartinersCard 
+                    title={'Toro Investimentos'} 
+                    conteudo={'Invista com a Toro e ganhe taxa de corretagem ZERO e CASHBACK!'}
+                    btnText={'Ganhe 2000 Pts'}
+                    value={'20,00'}
+                    logoPng={require('../../../assets/imagens/toro.png')}
+                />
+                <PartinersCard 
+                    title={'Cartão Will'} 
+                    conteudo={'Cartão de crédito com tarifa 0 e anuidade 0 repleto de beneficios para você!'}
+                    btnText={'Ganhe 1600 Pts'}
+                    value={'16,00'}
+                    logoPng={require('../../../assets/imagens/will.png')}
+                />
+                <PartinersCard 
+                    title={'Resolvvi'} 
+                    conteudo={'Limpe seu nome, receba sua indenização e você só paga se ganhar!'}
+                    btnText={'Ganhe 2200 Pts'}
+                    value={'1,50'}
+                    logoPng={require('../../../assets/imagens/sim.png')}
+                />
             </View>
             
         </View>
@@ -62,7 +98,7 @@ export default function Parceiros(){
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'orange',
+        backgroundColor: '#FFF',
         flex: 1
     },
     options: {

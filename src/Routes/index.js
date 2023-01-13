@@ -15,6 +15,7 @@ import Profile from "../Componentes/Profile";
 import PlanFree from "../Pages/PlanFree";
 import Questions from "../SubPages/PlanFree/Questions";
 import Points from "../SubPages/PlanFree/Points";
+import Cadastro from "../Componentes/Cadastro";
 
 const Stack = createNativeStackNavigator();
 
@@ -65,6 +66,10 @@ export default function Routes(){
             <Stack.Screen
                 name="Points"
                 component={Points}
+            />
+            <Stack.Screen
+                name="Cadastro"
+                component={Cadastro}
             />
             
         </Stack.Navigator>

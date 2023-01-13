@@ -49,7 +49,7 @@ export default function Profile(){
 
             <View style={styles.container_bottom}>
                 <ScrollView style={styles.scrollStyle}>
-                        <TouchableOpacity style={styles.scrollButton}>
+                        <TouchableOpacity style={styles.scrollButton} onPress={() => navigation.navigate('Cadastro')}>
                             <Feather name="user" size={30} color="lightgray"/>
                             <Text style={styles.btnText}>Meu Cadastro</Text>
                         </TouchableOpacity>

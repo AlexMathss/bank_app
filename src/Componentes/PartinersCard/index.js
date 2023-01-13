@@ -5,11 +5,14 @@ export default function PartinersCard({
     title,
     conteudo,
     btnText,
-    value
+    value,
+    logoPng
 }){
     return(
         <View style={styles.container}>
-            <View style={styles.logo}/>
+            <View style={styles.logo}>
+                <Image source={logoPng} style={{width: '100%', height: '100%', borderRadius: 50}}/>
+            </View>
             <View style={styles.content}>
                 <Text style={styles.title}>{title}</Text>
                 <Text style={styles.conteudo}>
@@ -35,7 +38,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
-        padding: 10
+        padding: 10,
+        marginBottom: 20,
+        borderWidth: 1,
+        borderColor: 'gray'
     },
     logo: {
         backgroundColor: 'green',
