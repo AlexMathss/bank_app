@@ -1,5 +1,5 @@
 import React from "react";
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 
 
@@ -15,10 +15,10 @@ export default function Partiners({
                     <Text style={{fontSize: 30, color: '#FFF', fontWeight: 'bold'}}>L</Text>
                 </View>
             </View>
-            <View style={styles.content}>
+            <TouchableOpacity activeOpacity={0.5} style={styles.content}>
                 <Text style={styles.title}>Ganhe</Text>
                 <Text style={styles.subTitle}>{pontos}</Text>
-            </View>
+            </TouchableOpacity>
             <Text style={styles.description}>{descriptions}</Text>
         </View>
     )
