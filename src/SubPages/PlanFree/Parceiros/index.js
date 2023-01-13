@@ -146,7 +146,6 @@ const styles = StyleSheet.create({
         color: '#414b6f'
     },
     ofertasPartners: {
-        backgroundColor: 'purple',
         height: 40,
         paddingHorizontal: 20,
         justifyContent: 'space-between',
