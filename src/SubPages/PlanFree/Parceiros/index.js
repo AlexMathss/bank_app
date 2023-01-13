@@ -1,6 +1,7 @@
 import React from "react";
 import {ScrollView, StyleSheet,TouchableOpacity,View, Text, Image} from 'react-native';
 import Partiners from "../../../Componentes/Partiners";
+import PartinersCard from "../../../Componentes/PartinersCard";
 
 export default function Parceiros(){
     return(
@@ -46,7 +47,13 @@ export default function Parceiros(){
             </View>
 
             <View style={styles.cardOfertas}>
-
+                <PartinersCard 
+                    title={'Jeitto'} 
+                    conteudo={'Crédito para você usar como quiser. Dê um jeito na sua vida financeira e saia do vermelho. Sem precisar de conta bancária e sem anuidade'}
+                    btnText={'Ganhe 200 Pts'}
+                    value={'2,00'}
+                    />
+                    
             </View>
             
         </View>
@@ -157,6 +164,6 @@ const styles = StyleSheet.create({
         color: '#3461e2'
     },
     cardOfertas: {
-    
+        paddingHorizontal: 20
     }
 })
