@@ -18,8 +18,12 @@ export default function Parceiros(){
             <View style={styles.ofertas}>
                 <Text style={styles.title}>Ofertas</Text>
                 <View style={styles.wallets}>
-                    <ScrollView horizontal={true}>
-                        <Partiners/>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <Partiners pontos={'5000 Pts'} descriptions={'Mobils'}/>
+                        <Partiners pontos={'1600 Pts'} descriptions={'Cartão Will'}/>
+                        <Partiners pontos={'4500 Pts'} descriptions={'Empréstimo'}/>
+                        <Partiners pontos={'2000 Pts'} descriptions={'Investimentos'}/>
+                        <Partiners pontos={'150 Pts'} descriptions={'Sair das Dividas'}/>
                     </ScrollView>
                 </View>
             </View>
@@ -87,8 +91,8 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase'
     },
     ofertas: {
-        backgroundColor: 'purple',
-        height: 150,
+        backgroundColor: '#FFF',
+        height: 190,
         paddingLeft: 20,
         justifyContent: 'space-between'
     },
@@ -97,8 +101,7 @@ const styles = StyleSheet.create({
         fontSize: 18
     },
     wallets: {
-        backgroundColor: 'gray',
-        height: 120
+        height: 140
     },
     banner: {},
     bannerTitle: {},

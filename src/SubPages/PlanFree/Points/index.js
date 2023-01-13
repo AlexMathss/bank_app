@@ -25,6 +25,7 @@ export default function Points(){
                     </View>
                 </View>
                 <Parceiros/>
+                
             </ScrollView>
         </View>
     )
