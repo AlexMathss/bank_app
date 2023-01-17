@@ -37,11 +37,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#6215dd'
     },
     header: {
-        backgroundColor: 'orange',
         height: 120,
         justifyContent: 'space-between',
         paddingHorizontal: 15,
-        marginBottom: 30
+        marginBottom: 30,
+        marginTop: 20
     },
     back: {
         flexDirection: 'row',
